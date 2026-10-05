@@ -1,0 +1,733 @@
+/* =====================================================
+   AURAGPT SIDEBAR
+===================================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 230px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 14px 14px;
+
+    background: #0f0f14;
+    color: #ffffff;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 3px 7px 22px;
+}
+
+.aura-logo {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #5b7cff
+    );
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 20px rgba(124, 92, 246, 0.25);
+}
+
+.brand-text {
+    min-width: 0;
+}
+
+.brand-text h2 {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+}
+
+.brand-text h2 span {
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #6ea8ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-text p {
+    margin: 3px 0 0;
+
+    font-size: 9px;
+
+    color: #777786;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =====================================================
+   NEW CHAT BUTTON
+===================================================== */
+
+.new-chat-button {
+    width: 100%;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(139, 92, 246, 0.35);
+
+    border-radius: 11px;
+
+    background: rgba(139, 92, 246, 0.10);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border 0.2s ease,
+        transform 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+.new-chat-button:hover {
+    background: rgba(139, 92, 246, 0.17);
+
+    border-color: rgba(139, 92, 246, 0.55);
+
+    transform: translateY(-1px);
+}
+
+.new-chat-left {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.new-chat-icon {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: rgba(139, 92, 246, 0.18);
+
+    color: #b49aff;
+
+    font-size: 11px;
+}
+
+.new-chat-button > i {
+    color: #777786;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   HISTORY HEADING
+===================================================== */
+
+.history-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 23px 5px 9px;
+
+    color: #686877;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.1px;
+}
+
+.history-heading i {
+    font-size: 10px;
+
+    color: #555562;
+}
+
+
+/* =====================================================
+   CHAT HISTORY
+===================================================== */
+
+.history {
+    flex: 1;
+
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* scrollbar */
+
+.history::-webkit-scrollbar {
+    width: 5px;
+}
+
+.history::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.history::-webkit-scrollbar-thumb {
+    background: #292932;
+
+    border-radius: 10px;
+}
+
+.history::-webkit-scrollbar-thumb:hover {
+    background: #3d3d49;
+}
+
+
+/* =====================================================
+   HISTORY ITEM
+===================================================== */
+
+.history-item {
+    width: 100%;
+
+    min-height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 3px;
+
+    padding: 7px 8px;
+
+    border-radius: 9px;
+
+    color: #a4a4b3;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+.history-item:hover {
+    background: rgba(255, 255, 255, 0.045);
+
+    color: #ffffff;
+}
+
+
+/* active chat */
+
+.history-item.active-thread {
+    background: rgba(139, 92, 246, 0.13);
+
+    color: #ffffff;
+
+    border-left: 2px solid #8b5cf6;
+
+    padding-left: 6px;
+}
+
+
+/* =====================================================
+   THREAD ICON
+===================================================== */
+
+.thread-icon {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #777786;
+
+    font-size: 11px;
+}
+
+.history-item:hover .thread-icon {
+    color: #aaa3ff;
+}
+
+.active-thread .thread-icon {
+    color: #a78bfa;
+
+    background: rgba(139, 92, 246, 0.12);
+}
+
+
+/* =====================================================
+   THREAD TITLE
+===================================================== */
+
+.thread-title {
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-size: 12px;
+
+    line-height: 18px;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.delete-chat {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #666674;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+.history-item:hover .delete-chat {
+    opacity: 1;
+}
+
+.delete-chat:hover {
+    background: rgba(239, 68, 68, 0.12);
+
+    color: #f87171;
+}
+
+.delete-chat i {
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   BOTTOM AREA
+===================================================== */
+
+.sidebar-bottom {
+    position: relative;
+
+    flex-shrink: 0;
+
+    margin-top: 12px;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-sidebar {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    box-sizing: border-box;
+
+    transition: background 0.2s ease;
+}
+
+.profile-sidebar:hover {
+    background: rgba(255, 255, 255, 0.065);
+}
+
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.sidebar-avatar {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #557cff
+    );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   USER INFO
+===================================================== */
+
+.sidebar-user-info {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-user-info strong {
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color: #eeeeF5;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.sidebar-user-info small {
+    margin-top: 2px;
+
+    color: #6e6e7c;
+
+    font-size: 8px;
+}
+
+.profile-sidebar > i {
+    color: #777786;
+
+    font-size: 9px;
+
+    transition: transform 0.2s ease;
+}
+
+.profile-sidebar > i.rotate-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   PROFILE MENU
+===================================================== */
+
+.sidebar-menu {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: calc(100% + 8px);
+
+    padding: 6px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 11px;
+
+    background: #19191f;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+
+    z-index: 2000;
+}
+
+
+/* =====================================================
+   MENU ITEMS
+===================================================== */
+
+.sidebar-menu-item {
+    width: 100%;
+
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #b7b7c4;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+.sidebar-menu-item:hover {
+    background: rgba(255, 255, 255, 0.055);
+
+    color: #ffffff;
+}
+
+.sidebar-menu-item i {
+    width: 16px;
+
+    text-align: center;
+
+    color: #858594;
+
+    font-size: 11px;
+}
+
+.sidebar-menu-item.upgrade i {
+    color: #c4a2ff;
+}
+
+.sidebar-menu-item.logout {
+    color: #f08a8a;
+}
+
+.sidebar-menu-item.logout i {
+    color: #f08a8a;
+}
+
+.sidebar-menu-item.logout:hover {
+    background: rgba(239, 68, 68, 0.08);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.sidebar-footer {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    margin-top: 10px;
+
+    color: #555562;
+
+    font-size: 8px;
+
+    white-space: nowrap;
+}
+
+.footer-dot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #7c5cff;
+
+    box-shadow:
+        0 0 7px rgba(124, 92, 255, 0.7);
+}
+
+
+/* =====================================================
+   LIGHT MODE
+===================================================== */
+
+body.light .sidebar {
+    background: #f7f7fa;
+
+    color: #202025;
+
+    border-right-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .brand-text h2 {
+    color: #202025;
+}
+
+body.light .brand-text p,
+body.light .history-heading,
+body.light .sidebar-footer {
+    color: #888894;
+}
+
+body.light .history-item {
+    color: #666673;
+}
+
+body.light .history-item:hover {
+    background: rgba(0, 0, 0, 0.045);
+
+    color: #202025;
+}
+
+body.light .profile-sidebar {
+    background: rgba(0, 0, 0, 0.035);
+
+    border-color: rgba(0, 0, 0, 0.08);
+
+    color: #202025;
+}
+
+body.light .sidebar-user-info strong {
+    color: #202025;
+}
+
+body.light .sidebar-menu {
+    background: #ffffff;
+
+    border-color: rgba(0, 0, 0, 0.1);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+body.light .sidebar-menu-item {
+    color: #555560;
+}
+
+body.light .sidebar-menu-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+
+    color: #202025;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+
+}

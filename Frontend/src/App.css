@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #212121;
+    overflow: hidden;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #212121;
+    overflow: hidden;
+}
+
+/* ========================================= */
+/* THEME SYSTEM */
+/* ========================================= */
+
+body {
+    margin: 0;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* ================= DARK ================= */
+
+body.dark {
+    background: #212121;
+    color: #ffffff;
+}
+
+
+/* ================= LIGHT ================= */
+
+body.light {
+    background: #ffffff;
+    color: #171717;
+}
+
+
+/* ========================================= */
+/* APP */
+/* ========================================= */
+
+.app {
+    height: 100vh;
+    min-height: 0;
+    min-width: 0;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.app.dark {
+    background: #212121;
+    color: white;
+}
+
+.app.light {
+    background: #ffffff;
+    color: #171717;
+}
+
+
+/* ========================================= */
+/* CHAT WINDOW */
+/* ========================================= */
+
+.chatWindow.dark {
+    background: #212121;
+    color: #ffffff;
+}
+
+.chatWindow.light {
+    background: #ffffff;
+    color: #171717;
+}
+
+
+/* ========================================= */
+/* LIGHT CHAT INPUT */
+/* ========================================= */
+
+body.light .userInput {
+    background: #f1f1f1;
+}
+
+body.light .userInput input {
+    color: #171717;
+}
+
+body.light .userInput input::placeholder {
+    color: #777777;
+}
+
+body.light .info {
+    color: #777777;
+}
+
+
+/* ========================================= */
+/* LIGHT NAVBAR */
+/* ========================================= */
+
+body.light .navbar {
+    background: #ffffff;
+    color: #171717;
+}
+
+
+/* ========================================= */
+/* LIGHT CHAT */
+/* ========================================= */
+
+body.light .gptDiv {
+    color: #171717;
+}
+
+body.light .userMessage {
+    background: #eeeeee;
+    color: #171717;
+}
+
+
+/* ========================================= */
+/* VOICE BUTTON */
+/* ========================================= */
+
+.voiceButton {
+    border: none;
+    background: transparent;
+    color: #888888;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+.voiceButton:hover {
+    background: rgba(128, 128, 128, 0.15);
+    color: #ffffff;
+}
+
+body.light .voiceButton {
+    color: #555555;
+}
+
+body.light .voiceButton:hover {
+    background: #dddddd;
+    color: #111111;
+}
+
+
+/* ========================================= */
+/* LISTENING */
+/* ========================================= */
+
+.voiceButton.listening {
+    background: #ef4444;
+    color: white;
+
+    animation: pulseMic 1s infinite;
+}
+
+
+@keyframes pulseMic {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* ========================================= */
+/* SEND BUTTON */
+/* ========================================= */
+
+#submit {
+    cursor: pointer;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+
+/* ========================================= */
+/* SIDEBAR PROFILE */
+/* ========================================= */
+
+.sidebar-bottom {
+    position: relative;
+    margin-top: auto;
+}
+
+
+.profile-sidebar {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+
+.profile-sidebar:hover {
+    background: rgba(128, 128, 128, 0.15);
+}
+
+
+.sidebar-user-icon {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #3b82f6;
+
+    color: white;
+}
+
+
+.sidebar-user-name {
+    flex: 1;
+
+    text-align: left;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ========================================= */
+/* SIDEBAR MENU */
+/* ========================================= */
+
+.sidebar-menu {
+    position: absolute;
+
+    bottom: 55px;
+    left: 10px;
+    right: 10px;
+
+    background: #2b2b2b;
+
+    border: 1px solid #444;
+
+    border-radius: 12px;
+
+    padding: 6px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    z-index: 1000;
+}
+
+
+.sidebar-menu-item {
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    text-align: left;
+}
+
+
+.sidebar-menu-item:hover {
+    background: #3a3a3a;
+}
+
+
+.sidebar-menu-item.logout {
+    color: #ff6b6b;
+}
+
+
+body.light .sidebar-menu {
+    background: white;
+
+    border: 1px solid #dddddd;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+body.light .sidebar-menu-item {
+    color: #222222;
+}
+
+
+body.light .sidebar-menu-item:hover {
+    background: #f1f1f1;
+}
+
+
+body.light .sidebar-menu-item.logout {
+    color: #dc2626;
+}
+
+
+/* ========================================= */
+/* ARROW */
+/* ========================================= */
+
+.rotate-arrow {
+    transform: rotate(180deg);
+
+    transition: 0.2s;
+}
+

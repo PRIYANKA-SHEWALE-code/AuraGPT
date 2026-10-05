@@ -1,0 +1,175 @@
+.authPage {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #212121;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.authBox {
+
+    width: 380px;
+
+    padding: 35px;
+
+    background: #171717;
+
+    border: 1px solid #333;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+}
+
+
+.authBox h1 {
+
+    margin-bottom: 10px;
+
+    font-size: 28px;
+
+}
+
+
+.authBox > p {
+
+    color: #aaa;
+
+    margin-bottom: 25px;
+
+}
+
+
+.authBox form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.authBox input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    border: 1px solid #444;
+
+    outline: none;
+
+    background: #252525;
+
+    color: white;
+
+    font-size: 15px;
+
+}
+
+
+.authBox input:focus {
+
+    border-color: #3b82f6;
+
+}
+
+
+.authBox form button {
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #3b82f6;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+}
+
+
+.authBox form button:hover {
+
+    background: #2563eb;
+
+}
+
+
+.authBox form button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+.authError {
+
+    color: #ff6b6b !important;
+
+    font-size: 14px;
+
+}
+
+
+.linkButton {
+
+    background: none;
+
+    border: none;
+
+    color: #3b82f6;
+
+    cursor: pointer;
+
+    margin-left: 5px;
+
+}
+
+
+.authLoading {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #212121;
+
+    color: white;
+
+    font-size: 20px;
+
+}
